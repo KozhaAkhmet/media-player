@@ -1,0 +1,10 @@
+module MediaPlayerModule
+
+Main 1.0 Main.qml
+About 1.0 qml/About.qml
+MyMenu 1.0 qml/MyMenu.qml
+Sidebar 1.0 qml/Sidebar.qml
+FileSystemView 1.0 qml/FileSystemView.qml
+MusicSystemView 1.0 qml/MusicSystemView.qml
+MusicWindow 1.0 qml/MusicWindow.qml
+singleton Colors 1.0 qml/Colors.qml
