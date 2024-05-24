@@ -51,7 +51,7 @@ Item {
         anchors.bottom: parent.bottom
 
         background: Rectangle {
-            color: Colors.surface2
+            color: Colors.surface1
         }
 
         ColumnLayout {
@@ -67,8 +67,12 @@ Item {
 
             RowLayout {
                 id: playerButtons
-                Layout.alignment: Qt.AlignCenter
+                Layout.alignment: Qt.AlignRight
                 Layout.fillWidth: true
+
+                Item {
+                    Layout.fillWidth: true
+                }
 
                 Item {
                     Layout.fillWidth: true

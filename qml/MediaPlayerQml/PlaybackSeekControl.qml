@@ -22,7 +22,8 @@ Item {
             id: mediaTime
             Layout.minimumWidth: 50
             Layout.minimumHeight: 18
-            horizontalAlignment: Text.AlignRight
+            horizontalAlignment: Text.AlignJustify
+            color: Colors.text
             text: {
                 var m = Math.floor(mediaPlayer.position / 60000)
                 var ms = (mediaPlayer.position / 1000 - m * 60).toFixed(1)

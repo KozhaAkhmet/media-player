@@ -15,7 +15,7 @@ Rectangle {
     width: 640
     height: 480
     visible: true
-    color: Colors.surface2
+    color: Colors.selection
     required property string currentFilePath
     // required property Player mediaPlayer
     property alias source: mediaPlayer.source
