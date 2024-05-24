@@ -3,10 +3,13 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QCommandLineParser>
+#include <QDir>
 
 int main(int argc, char* argv[]) {
 
   QGuiApplication app(argc, argv);
+  QCommandLineParser parser;
 
   QQmlApplicationEngine engine;
   // const QUrl url(u"qrc:/MediaPlayer/Main.qml"_qs);
@@ -19,6 +22,15 @@ int main(int argc, char* argv[]) {
 
   engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
   engine.addImportPath(":/");
+
+  if (!parser.positionalArguments().isEmpty()) {
+    QUrl source = QUrl::fromUserInput(parser.positionalArguments().at(0), QDir::currentPath());
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+                     &engine, [source](QObject *object, const QUrl &) {
+                       qDebug() << "setting source";
+                       object->setProperty("source", source);
+                     });
+  }
 
   engine.loadFromModule("MediaPlayerModule", "Main");
 

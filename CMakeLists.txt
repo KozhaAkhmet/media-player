@@ -7,7 +7,7 @@ project(MediaPlayerApp LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick QuickControls2 Svg)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick QuickControls2 Multimedia Svg)
 
 if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
     qt_standard_project_setup()
@@ -33,10 +33,10 @@ qt_add_qml_module(MediaPlayerApp
         "qml/Sidebar.qml"
         "qml/MusicWindow.qml"
         "qml/FileSystemView.qml"
-        "qml/MediaPlayer/Player.qml"
-        "qml/MediaPlayer/AudioControl.qml"
-        "qml/MediaPlayer/PlaybackControl.qml"
-        "qml/MediaPlayer/PlaybackSeekControl.qml"
+        "qml/MediaPlayerQml/Player.qml"
+        "qml/MediaPlayerQml/AudioControl.qml"
+        "qml/MediaPlayerQml/PlaybackControl.qml"
+        "qml/MediaPlayerQml/PlaybackSeekControl.qml"
     RESOURCES
         "icons/folder_closed.svg"
         "icons/folder_open.svg"
@@ -61,6 +61,7 @@ qt_add_qml_module(MediaPlayerApp
 )
 
 target_link_libraries(MediaPlayerApp PRIVATE
+    Qt6::Multimedia
     Qt6::Core
     Qt6::Gui
     Qt6::Qml

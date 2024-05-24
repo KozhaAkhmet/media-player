@@ -7,4 +7,5 @@ Sidebar 1.0 qml/Sidebar.qml
 FileSystemView 1.0 qml/FileSystemView.qml
 MusicSystemView 1.0 qml/MusicSystemView.qml
 MusicWindow 1.0 qml/MusicWindow.qml
+MediaPlayer 1.0 qml/MediaPlayer/MediaPlayer.qml
 singleton Colors 1.0 qml/Colors.qml

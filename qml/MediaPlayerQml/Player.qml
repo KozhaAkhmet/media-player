@@ -8,13 +8,16 @@ import QtQuick.Layouts
 import QtMultimedia
 import MediaPlayerModule
 
+pragma ComponentBehavior: Bound
 
 Rectangle {
     id: root
     width: 640
     height: 480
     visible: true
-    color: Colors.surface1
+    color: Colors.surface2
+    required property string currentFilePath
+    // required property Player mediaPlayer
     property alias source: mediaPlayer.source
 
     Popup {
@@ -27,13 +30,14 @@ Rectangle {
 
     MediaPlayer {
         id: mediaPlayer
+        source: "file://" + root.currentFilePath
 
-        function updateMetadata() {
-            metadataInfo.clear();
-            metadataInfo.read(mediaPlayer.metaData);
-            metadataInfo.read(mediaPlayer.audioTracks[mediaPlayer.activeAudioTrack]);
-            metadataInfo.read(mediaPlayer.videoTracks[mediaPlayer.activeVideoTrack]);
-        }
+        // function updateMetadata() {
+        //     metadataInfo.clear();
+        //     metadataInfo.read(mediaPlayer.metaData);
+        //     metadataInfo.read(mediaPlayer.audioTracks[mediaPlayer.activeAudioTrack]);
+        //     metadataInfo.read(mediaPlayer.videoTracks[mediaPlayer.activeVideoTrack]);
+        // }
 
         videoOutput: videoOutput
         audioOutput: AudioOutput {
@@ -43,17 +47,17 @@ Rectangle {
         }
 
         onErrorOccurred: { mediaErrorText.text = mediaPlayer.errorString; mediaError.open() }
-        onMetaDataChanged: { updateMetadata() }
-        onTracksChanged: {
-            audioTracksInfo.read(mediaPlayer.audioTracks);
-            audioTracksInfo.selectedTrack = mediaPlayer.activeAudioTrack;
-            videoTracksInfo.read(mediaPlayer.videoTracks);
-            videoTracksInfo.selectedTrack = mediaPlayer.activeVideoTrack;
-            subtitleTracksInfo.read(mediaPlayer.subtitleTracks);
-            subtitleTracksInfo.selectedTrack = mediaPlayer.activeSubtitleTrack;
-            updateMetadata()
-        }
-        onActiveTracksChanged: { updateMetadata() }
+        // onMetaDataChanged: { updateMetadata() }
+        // onTracksChanged: {
+        //     audioTracksInfo.read(mediaPlayer.audioTracks);
+        //     audioTracksInfo.selectedTrack = mediaPlayer.activeAudioTrack;
+        //     videoTracksInfo.read(mediaPlayer.videoTracks);
+        //     videoTracksInfo.selectedTrack = mediaPlayer.activeVideoTrack;
+        //     subtitleTracksInfo.read(mediaPlayer.subtitleTracks);
+        //     subtitleTracksInfo.selectedTrack = mediaPlayer.activeSubtitleTrack;
+        //     updateMetadata()
+        // }
+        // onActiveTracksChanged: { updateMetadata() }
     }
 
     VideoOutput {

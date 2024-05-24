@@ -5,6 +5,7 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 import MediaPlayerModule 1.0
 import QtQuick.Window 2.1
+import QtMultimedia
 
 pragma ComponentBehavior: Bound
 
@@ -13,6 +14,8 @@ Window {
 
     property bool expandPath: false
     property string currentFilePath: ""
+    // required property Player mediaPlayer
+    // property alias source: mediaPlayer.source
 
     width: 1100
     height: 600
@@ -99,6 +102,7 @@ Window {
                 id: player
                 SplitView.fillWidth: true
                 SplitView.fillHeight: true
+                currentFilePath: root.currentFilePath
             }
         }
     }
