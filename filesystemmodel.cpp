@@ -44,16 +44,6 @@ QString FileSystemModel::readFile(const QString &filePath)
     return tr("Filetype not supported!");
 }
 
-// This function gets called from Editor.qml
-int FileSystemModel::currentLineNumber(QQuickTextDocument *textDocument, int cursorPosition)
-{
-    if (QTextDocument *td = textDocument->textDocument()) {
-        QTextBlock tb = td->findBlock(cursorPosition);
-        return tb.blockNumber();
-    }
-    return -1;
-}
-
 int FileSystemModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)

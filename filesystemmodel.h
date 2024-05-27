@@ -18,7 +18,7 @@ public:
 
     // Functions invokable from QML
     Q_INVOKABLE QString readFile(const QString &filePath);
-    Q_INVOKABLE int currentLineNumber(QQuickTextDocument *textDocument, int cursorPosition);
+    // Q_INVOKABLE int currentLineNumber(QQuickTextDocument *textDocument, int cursorPosition);
 
     // Overridden functions
     int columnCount(const QModelIndex &parent) const override;

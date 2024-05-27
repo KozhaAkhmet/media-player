@@ -55,8 +55,8 @@ qt_add_qml_module(MediaPlayerApp
     SOURCES
         filesystemmodel.cpp
         filesystemmodel.h
-        linenumbermodel.cpp
-        linenumbermodel.h
+
+
         QML_FILES qml/MusicSystemView.qml
 )
 
