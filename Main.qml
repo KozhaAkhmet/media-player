@@ -66,7 +66,8 @@ Window {
             Rectangle {
                 id: navigationView
                 color: Colors.surface1
-                SplitView.preferredWidth: 250
+                SplitView.maximumWidth: 300
+                SplitView.minimumWidth: 300
                 SplitView.fillHeight: true
                 // The stack-layout provides different views, based on the
                 // selected buttons inside the sidebar.
