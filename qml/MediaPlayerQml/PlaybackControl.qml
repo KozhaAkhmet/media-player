@@ -58,7 +58,7 @@ Item {
             id: playbackControlPanel
             anchors.fill: parent
             anchors.leftMargin: 10
-            anchors.rightMargin: 10
+            anchors.rightMargin: 20
 
             PlaybackSeekControl {
                 Layout.fillWidth: true
@@ -114,6 +114,7 @@ Item {
                     Layout.maximumWidth: 150
                     Layout.fillWidth: true
                     mediaPlayer: root.mediaPlayer
+                    Layout.rightMargin: 20
                 }
             }
         }
