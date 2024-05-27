@@ -10,8 +10,14 @@
 
 FileSystemModel::FileSystemModel(QObject *parent) : QFileSystemModel(parent)
 {
-    setFilter(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot);
-    setInitialDirectory();
+  QStringList filters;
+  filters << "*.mp3" << "*.mp4";
+  setNameFilters(filters);
+
+  setNameFilterDisables(false);
+
+  setFilter(QDir::NoFilter);
+  setInitialDirectory();
 }
 
 QString FileSystemModel::readFile(const QString &filePath)
