@@ -65,10 +65,13 @@ Rectangle {
 
         property bool fullScreen: false
 
-        // anchors.top: fullScreen ? parent.top : menuBar.bottom
-        anchors.bottom: playbackControl.top
+        anchors.top: parent.top
+        anchors.bottom: playbackControl.bottom
         anchors.left: parent.left
         anchors.right: parent.right
+        anchors.leftMargin: 10
+        anchors.rightMargin: 10
+        anchors.bottomMargin: 70
 
         TapHandler {
             onDoubleTapped: {
