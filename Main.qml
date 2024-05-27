@@ -17,8 +17,8 @@ Window {
     // required property Player mediaPlayer
     // property alias source: mediaPlayer.source
 
-    width: 1100
-    height: 600
+    minimumWidth: 1100
+    minimumHeight: 600
     visible: true
     color: Colors.background
     flags: Qt.Window
