@@ -21,7 +21,7 @@ Rectangle {
         Layout.alignment: Qt.AlignHCenter
         Layout.fillWidth: true
 
-        icon.color: down || checked ? Colors.iconIndicator : Colors.icon
+        icon.color: down || checked ? Colors.color1 : Colors.icon
         icon.width: 27
         icon.height: 27
 
