@@ -7,14 +7,14 @@ import MediaPlayerModule 1.0
 import QtQuick.Window 2.1
 import QtMultimedia
 
-pragma ComponentBehavior: Bound
+// pragma ComponentBehavior: Bound
 
 Window {
     id: root
 
     property bool expandPath: false
     property string currentFilePath: ""
-    // required property Player mediaPlayer
+    // required property MediaPlayer mediaPlayer
     // property alias source: mediaPlayer.source
 
     minimumWidth: 1100

@@ -55,9 +55,7 @@ qt_add_qml_module(MediaPlayerApp
     SOURCES
         filesystemmodel.cpp
         filesystemmodel.h
-
-
-        QML_FILES qml/MusicSystemView.qml
+        QML_FILES
 )
 
 target_link_libraries(MediaPlayerApp PRIVATE
