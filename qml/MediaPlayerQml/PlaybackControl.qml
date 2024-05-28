@@ -62,6 +62,7 @@ Item {
 
             PlaybackSeekControl {
                 Layout.fillWidth: true
+                Layout.bottomMargin: 10
                 mediaPlayer: root.mediaPlayer
             }
 
