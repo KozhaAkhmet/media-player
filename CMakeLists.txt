@@ -33,6 +33,7 @@ qt_add_qml_module(MediaPlayerApp
         "qml/Sidebar.qml"
         "qml/MusicWindow.qml"
         "qml/FileSystemView.qml"
+        "qml/MusicSystemView.qml"
         "qml/MediaPlayerQml/Player.qml"
         "qml/MediaPlayerQml/AudioControl.qml"
         "qml/MediaPlayerQml/PlaybackControl.qml"
@@ -52,6 +53,9 @@ qt_add_qml_module(MediaPlayerApp
         "icons/folders_tree.svg"
         "icons/Mute_Icon.svg"
         "icons/Speaker_Icon.svg"
+        "icons/burger.svg"
+        "icons/repeat.svg"
+        "icons/shuffle.svg"
     SOURCES
         filesystemmodel.cpp
         filesystemmodel.h
