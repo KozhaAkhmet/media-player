@@ -38,6 +38,8 @@ qt_add_qml_module(MediaPlayerApp
         "qml/MediaPlayerQml/AudioControl.qml"
         "qml/MediaPlayerQml/PlaybackControl.qml"
         "qml/MediaPlayerQml/PlaybackSeekControl.qml"
+        "qml/MediaPlayerQml/TracksInfo.qml"
+        "qml/MediaPlayerQml/MetadataInfo.qml"
     RESOURCES
         "icons/folder_closed.svg"
         "icons/folder_open.svg"
