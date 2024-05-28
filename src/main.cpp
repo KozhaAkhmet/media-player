@@ -4,6 +4,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QCommandLineParser>
+#include <QIcon>
 #include <QDir>
 
 int main(int argc, char* argv[]) {
@@ -19,7 +20,7 @@ int main(int argc, char* argv[]) {
   //       if (!obj && url == objUrl) QCoreApplication::exit(-1);
   //     },
   //     Qt::QueuedConnection);
-
+  QGuiApplication::setWindowIcon(QIcon("../MediaPlayer/icons/app_icon.svg"));
   engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
   engine.addImportPath(":/");
 

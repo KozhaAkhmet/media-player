@@ -63,6 +63,7 @@ target_link_libraries(MediaPlayerApp PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Qml
+    Qt6::Svg
     Qt6::Quick
 )
 
