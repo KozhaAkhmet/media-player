@@ -32,12 +32,12 @@ Rectangle {
         id: mediaPlayer
         source: "file://" + root.currentFilePath
 
-        // function updateMetadata() {
-        //     metadataInfo.clear();
-        //     metadataInfo.read(mediaPlayer.metaData);
-        //     metadataInfo.read(mediaPlayer.audioTracks[mediaPlayer.activeAudioTrack]);
-        //     metadataInfo.read(mediaPlayer.videoTracks[mediaPlayer.activeVideoTrack]);
-        // }
+        function updateMetadata() {
+            metadataInfo.clear();
+            metadataInfo.read(mediaPlayer.metaData);
+            metadataInfo.read(mediaPlayer.audioTracks[mediaPlayer.activeAudioTrack]);
+            metadataInfo.read(mediaPlayer.videoTracks[mediaPlayer.activeVideoTrack]);
+        }
 
         videoOutput: videoOutput
         audioOutput: AudioOutput {
@@ -47,17 +47,17 @@ Rectangle {
         }
 
         onErrorOccurred: { mediaErrorText.text = mediaPlayer.errorString; mediaError.open() }
-        // onMetaDataChanged: { updateMetadata() }
-        // onTracksChanged: {
-        //     audioTracksInfo.read(mediaPlayer.audioTracks);
-        //     audioTracksInfo.selectedTrack = mediaPlayer.activeAudioTrack;
-        //     videoTracksInfo.read(mediaPlayer.videoTracks);
-        //     videoTracksInfo.selectedTrack = mediaPlayer.activeVideoTrack;
-        //     subtitleTracksInfo.read(mediaPlayer.subtitleTracks);
-        //     subtitleTracksInfo.selectedTrack = mediaPlayer.activeSubtitleTrack;
-        //     updateMetadata()
-        // }
-        // onActiveTracksChanged: { updateMetadata() }
+        onMetaDataChanged: { updateMetadata() }
+        onTracksChanged: {
+            audioTracksInfo.read(mediaPlayer.audioTracks);
+            audioTracksInfo.selectedTrack = mediaPlayer.activeAudioTrack;
+            videoTracksInfo.read(mediaPlayer.videoTracks);
+            videoTracksInfo.selectedTrack = mediaPlayer.activeVideoTrack;
+            subtitleTracksInfo.read(mediaPlayer.subtitleTracks);
+            subtitleTracksInfo.selectedTrack = mediaPlayer.activeSubtitleTrack;
+            updateMetadata()
+        }
+        onActiveTracksChanged: { updateMetadata() }
     }
 
     VideoOutput {
@@ -87,48 +87,48 @@ Rectangle {
         }
     }
 
-    // MetadataInfo {
-    //     id: metadataInfo
+    MetadataInfo {
+        id: metadataInfo
 
-    //     anchors.right: parent.right
-    //     anchors.top: videoOutput.fullScreen ? parent.top : menuBar.bottom
-    //     anchors.bottom: playbackControl.opacity ? playbackControl.bottom : parent.bottom
+        anchors.right: parent.right
+        // anchors.top: videoOutput.fullScreen ? parent.top : menuBar.bottom
+        anchors.bottom: playbackControl.opacity ? playbackControl.bottom : parent.bottom
 
-    //     visible: false
-    // }
+        visible: false
+    }
 
-    // TracksInfo {
-    //     id: audioTracksInfo
+    TracksInfo {
+        id: audioTracksInfo
 
-    //     anchors.right: parent.right
-    //     anchors.top: videoOutput.fullScreen ? parent.top : menuBar.bottom
-    //     anchors.bottom: playbackControl.opacity ? playbackControl.bottom : parent.bottom
+        anchors.right: parent.right
+        // anchors.top: videoOutput.fullScreen ? parent.top : menuBar.bottom
+        anchors.bottom: playbackControl.opacity ? playbackControl.bottom : parent.bottom
 
-    //     visible: false
-    //     onSelectedTrackChanged:  mediaPlayer.activeAudioTrack = audioTracksInfo.selectedTrack
-    // }
+        visible: false
+        onSelectedTrackChanged:  mediaPlayer.activeAudioTrack = audioTracksInfo.selectedTrack
+    }
 
-    // TracksInfo {
-    //     id: videoTracksInfo
+    TracksInfo {
+        id: videoTracksInfo
 
-    //     anchors.right: parent.right
-    //     anchors.top: videoOutput.fullScreen ? parent.top : menuBar.bottom
-    //     anchors.bottom: playbackControl.opacity ? playbackControl.bottom : parent.bottom
+        anchors.right: parent.right
+        // anchors.top: videoOutput.fullScreen ? parent.top : menuBar.bottom
+        anchors.bottom: playbackControl.opacity ? playbackControl.bottom : parent.bottom
 
-    //     visible: false
-    //     onSelectedTrackChanged: mediaPlayer.activeVideoTrack = videoTracksInfo.selectedTrack
-    // }
+        visible: false
+        onSelectedTrackChanged: mediaPlayer.activeVideoTrack = videoTracksInfo.selectedTrack
+    }
 
-    // TracksInfo {
-    //     id: subtitleTracksInfo
+    TracksInfo {
+        id: subtitleTracksInfo
 
-    //     anchors.right: parent.right
-    //     anchors.top: videoOutput.fullScreen ? parent.top : menuBar.bottom
-    //     anchors.bottom: playbackControl.opacity ? playbackControl.bottom : parent.bottom
+        anchors.right: parent.right
+        // anchors.top: videoOutput.fullScreen ? parent.top : menuBar.bottom
+        anchors.bottom: playbackControl.opacity ? playbackControl.bottom : parent.bottom
 
-    //     visible: false
-    //     onSelectedTrackChanged: mediaPlayer.activeSubtitleTrack = subtitleTracksInfo.selectedTrack
-    // }
+        visible: false
+        onSelectedTrackChanged: mediaPlayer.activeSubtitleTrack = subtitleTracksInfo.selectedTrack
+    }
 
     PlaybackControl {
         id: playbackControl

@@ -68,8 +68,7 @@ Item {
 
             RowLayout {
                 id: playerButtons
-                Layout.alignment: Qt.AlignRight
-                Layout.fillWidth: true
+                 Layout.fillWidth: true
 
                 Item {
                     Layout.fillWidth: true
@@ -82,7 +81,7 @@ Item {
                 RowLayout {
 
                     id: controlButtons
-
+                    Layout.alignment: Qt.AlignHCenter
                     RoundButton {
                         id: pauseButton
                         radius: 50.0
