@@ -1,11 +1,11 @@
 // Copyright (C) 2023 The Qt Company Ltd.
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR BSD-3-Clause
-import QtQuick
-import QtQuick.Controls.Basic
-import QtQuick.Layouts
+import QtQuick 6.6
+import QtQuick.Controls.Basic 6.6
+import QtQuick.Layouts 6.6
 import MediaPlayerModule 1.0
 import QtQuick.Window 2.1
-import QtMultimedia
+import QtMultimedia 6.6
 
 // pragma ComponentBehavior: Bound
 

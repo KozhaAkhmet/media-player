@@ -1,8 +1,8 @@
 
-import QtQuick
-import QtQuick.Effects
-import QtQuick.Controls.Basic
-import MediaPlayerModule
+import QtQuick 6.6
+import QtQuick.Effects 6.6
+import QtQuick.Controls.Basic 6.6
+import MediaPlayerModule 1.0
 
 pragma ComponentBehavior: Bound
 
